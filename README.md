@@ -24,7 +24,7 @@ python train.py
 | Models                   | Accuracy | cat.mIOU | ins.mIOU |
 | ------------------------ | -------------- | ------------ | ------------ |
 | Point Transformer (paper)      |       None      |     0.837    |    0.866     |
-| Point Transformer (our-no quant)  |       0.93456      |     0.79787    |    0.83578     |
+| Point Transformer (ours)  |       0.93456      |     0.79787    |    0.83578     |
 
 # 关注我的公众号：
 

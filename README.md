@@ -1,8 +1,11 @@
-# Pytorch Implementation of Point Transformers
-
-Pytorch Implementation of Point Transformers with HAQ Automated Quantization，
+# Pytorch Implementation of Point Transformer
 
 基于Point Transformers复现点云分割任务
+
+## 论文地址：
+
+[https://arxiv.org/abs/2012.09164](https://arxiv.org/abs/2012.09164)
+
 
 ## 准备数据：
 使用连接下载 **ShapeNet** 数据集：[下载地址](https://shapenet.cs.stanford.edu/media/shapenetcore_partanno_segmentation_benchmark_v0_normal.zip) 

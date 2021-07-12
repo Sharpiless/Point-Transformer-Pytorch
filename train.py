@@ -12,7 +12,32 @@ import hydra
 import yaml
 from utils.general import to_categorical
 from utils.general import seg_classes, seg_label_to_cat
-from search import AttrDict, create_attr_dict
+
+def create_attr_dict(yaml_config):
+    from ast import literal_eval
+    for key, value in yaml_config.items():
+        if type(value) is dict:
+            yaml_config[key] = value = AttrDict(value)
+        if isinstance(value, str):
+            try:
+                value = literal_eval(value)
+            except BaseException:
+                pass
+        if isinstance(value, AttrDict):
+            create_attr_dict(yaml_config[key])
+        else:
+            yaml_config[key] = value
+
+
+class AttrDict(dict):
+    def __getattr__(self, key):
+        return self[key]
+
+    def __setattr__(self, key, value):
+        if key in self.__dict__:
+            self.__dict__[key] = value
+        else:
+            self[key] = value
 
 
 def inplace_relu(m):
